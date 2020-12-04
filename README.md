@@ -42,7 +42,7 @@ var R = [
     [-0.1898,    0.0587,    0.9801]
 ];
 var q = mcqt.unitQuaternionFromRotationMatrix(R);
-printQuaternion(q);
+mcqt.printQuaternion(q);
 ```
 
 Then run:
@@ -73,5 +73,5 @@ npm start
 Returns:
 
 ```js
-0.97517 < 0.009967, 0.099335, 0.197680 >
+0.975167 < 0.010000, 0.099247, 0.197737 >
 ```
