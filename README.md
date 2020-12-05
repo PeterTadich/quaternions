@@ -78,7 +78,7 @@ Returns:
 
 ## Examples (extended)
 
-Spherical Linear Quaternion interpolation: Slerp - quaternionSlerp().
+Spherical linear quaternion interpolation: Slerp - quaternionSlerp().
 
 ```js
 import * as hlao from 'matrix-computations';
@@ -86,7 +86,10 @@ import * as mcqt from 'quaternions';
 import * as mcer from 'elementary-rotations';
 
 var R0 = mcer.Rx_elementary(Math.PI);
-var R1 = hlao.matrix_multiplication(mcer.Ry_elementary(Math.PI/2.0),mcer.Rz_elementary(-1.0*Math.PI/2.0));
+var R1 = hlao.matrix_multiplication(
+            mcer.Ry_elementary(Math.PI/2.0),
+            mcer.Rz_elementary(-1.0*Math.PI/2.0)
+        );
 
 var q0 = mcqt.unitQuaternionFromRotationMatrix(R0);
 var q1 = mcqt.unitQuaternionFromRotationMatrix(R1);
