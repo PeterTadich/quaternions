@@ -85,18 +85,22 @@ import * as hlao from 'matrix-computations';
 import * as mcqt from 'quaternions';
 import * as mcer from 'elementary-rotations';
 
+//create rotation matrices
 var R0 = mcer.Rx_elementary(Math.PI);
 var R1 = hlao.matrix_multiplication(
             mcer.Ry_elementary(Math.PI/2.0),
             mcer.Rz_elementary(-1.0*Math.PI/2.0)
         );
 
+//convert to quaternions
 var q0 = mcqt.unitQuaternionFromRotationMatrix(R0);
 var q1 = mcqt.unitQuaternionFromRotationMatrix(R1);
 
+//interpolate at 0.5
 var t = 0.5; //t from [0,1]
 var q = mcqt.quaternionSlerp(q0,q1,t);
 
+//convert to rotation matrix and print to console
 var R = mcqt.rotationMatrixFromUnitQuaternion(q);
 console.log(R);
 ```
