@@ -75,3 +75,35 @@ Returns:
 ```js
 0.975167 < 0.010000, 0.099247, 0.197737 >
 ```
+
+## Examples (extended)
+
+Spherical Linear Quaternion interpolation: Slerp - quaternionSlerp().
+
+```js
+import * as hlao from 'matrix-computations';
+import * as mcqt from 'quaternions';
+import * as mcer from 'elementary-rotations';
+
+var R0 = mcer.Rx_elementary(Math.PI);
+var R1 = hlao.matrix_multiplication(mcer.Ry_elementary(Math.PI/2.0),mcer.Rz_elementary(-1.0*Math.PI/2.0));
+
+var q0 = mcqt.unitQuaternionFromRotationMatrix(R0);
+var q1 = mcqt.unitQuaternionFromRotationMatrix(R1);
+
+var t = 0.5; //t from [0,1]
+var q = mcqt.quaternionSlerp(q0,q1,t);
+
+var R = mcqt.rotationMatrixFromUnitQuaternion(q);
+console.log(R);
+```
+
+Returns:
+
+```js
+[
+  [ 0.0,  1.0,  0.0],
+  [ 0.0,  0.0, -1.0],
+  [-1.0,  0.0,  0.0]
+]
+```
