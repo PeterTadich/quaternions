@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/PeterTadich/quaternions#readme",
   "dependencies": {
-    "matrix-computations": "git+https://github.com/PeterTadich/matrix-computations.git#main"
+    "matrix-computations": "git+https://github.com/PeterTadich/matrix-computations.git
   }
 }
