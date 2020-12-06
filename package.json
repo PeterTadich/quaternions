@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/PeterTadich/quaternions/issues"
   },
-  "homepage": "https://github.com/PeterTadich/quaternions#readme"
+  "homepage": "https://github.com/PeterTadich/quaternions#readme",
+  "dependencies": {
+    "matrix-computations": "git+https://github.com/PeterTadich/matrix-computations.git#main"
+  }
 }
