@@ -3,6 +3,7 @@
 //ECMAScript module
 
 import * as hlao from 'matrix-computations';
+//import * as hlao from '../matrix-computations/hlao.mjs';
 
 //ref:
 //   - I:\onlineCourses\robotics_course\video\robot\L3\3 12 Quaternions\3.12 Quaternions (720p).mp4
